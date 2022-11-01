@@ -40,7 +40,7 @@ export const GlobalContextProvider = ({children}) => {
     setSmartContractAndProvider();
   },[])
   return (
-    <GlobalContext.Provider value={{demo: 'test'}}>
+    <GlobalContext.Provider value={{contract, walletAddress}}>
       {children}
     </GlobalContext.Provider>
   )
