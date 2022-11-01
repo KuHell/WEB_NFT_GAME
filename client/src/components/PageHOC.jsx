@@ -10,6 +10,17 @@ const PageHOC = (Component, title, description) => () => {
     <div className={s.hocContainer}>
       <div className={s.hocContentBox}>
         <img src={logo} alt="logo" className={s.hocLogo} onClick={()=> navigate('/')} />
+        <div className={s.hocBodyWrapper}>
+          <div className='flex flex-row w-full'>
+            <h1 className={`flex ${s.headText} head-text`}>{title}</h1>
+          </div>
+            <p className={`${s.normalText} my-10`}>{description}</p>
+          <Component />
+        </div>
+        <p className={s.footerText}>Made in KuHell</p>
+      </div>
+      <div className='flex flex-1'>
+        <img className='w-full xl:h-full object-cover' src={heroImg} alt="heroImg" />
       </div>
     </div>
   )
