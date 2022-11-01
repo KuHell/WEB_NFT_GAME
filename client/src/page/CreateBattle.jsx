@@ -4,7 +4,7 @@ import { PageHOC } from '../components';
 const CreateBattle = () => {
   return (
     <div>
-      
+      <h1 className='text-white'>Hello From CreateBattle</h1>
     </div>
   )
 };
