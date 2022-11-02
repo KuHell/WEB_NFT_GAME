@@ -15,14 +15,12 @@ export const GlobalContextProvider = ({children}) => {
   const updateCurrentWalletAddress = async () => {
     const accounts =  await window.ethereum.request({
       method: 'eth_requestAccounts'});
-      
     if(accounts) setWalletAddress(accounts[0]);
   }
 
   //시작시 업데이트를 호출
   useEffect(()=>{
     updateCurrentWalletAddress();
-
     window.ethereum.on('accountsChanged', updateCurrentWalletAddress);
   },[])
 
@@ -31,12 +29,11 @@ export const GlobalContextProvider = ({children}) => {
       const web3Modal = new Web3Modal();
       const connection = await web3Modal.connect();
       const newProvider = new ethers.providers.Web3Provider(connection);
-      const signer = newProvider.signer();
+      const signer = newProvider.getSigner();
       const newContract = new ethers.Contract(ADDRESS, ABI, signer);
       setProvider(newProvider);
       setContract(newContract);
     }
-
     setSmartContractAndProvider();
   },[])
   return (
