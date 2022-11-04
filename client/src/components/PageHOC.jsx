@@ -17,7 +17,7 @@ const PageHOC = (Component, title, description) => () => {
             <p className={`${s.normalText} my-10`}>{description}</p>
           <Component />
         </div>
-        <p className={s.footerText}>Made in KuHell</p>
+        <p className={s.footerText}>Made in KuHell test</p>
       </div>
       <div className='flex flex-1'>
         <img className='w-full xl:h-full object-cover' src={heroImg} alt="heroImg" />
