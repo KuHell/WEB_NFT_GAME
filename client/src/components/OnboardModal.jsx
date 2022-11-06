@@ -9,7 +9,7 @@ import { GetParams, SwitchNetwork } from '../utils/onboard.js';
 const OnboardModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { updateCurrentWalletAddress } = useGlobalContext();
-  const [step, setStep] = useState(-1);
+  const [step, setStep] = useState(-2);
 
   async function resetParams() {
     const currentStep = await GetParams();
